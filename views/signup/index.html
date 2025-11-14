@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Estilos propios (CSS en la misma carpeta) -->
+    <link rel="stylesheet" href="registro.css" />
+
+    <!-- Fuentes elegantes -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Registro - Montestilista</title>
+  </head>
+  <body>
+    <nav id="navbar" class="site-nav"></nav>
+    <div id="notification" class="notification-area" aria-live="polite"></div>
+
+    <div class="signup-page">
+      <div class="signup-aside">
+        <img src="/imag/logo sin fondo.png" alt="Montestilista" class="signup-illustration" />
+      </div>
+
+      <form id="form" class="signup-card" novalidate>
+        <header class="card-header">
+          <h2 class="card-title">Crear cuenta</h2>
+          <p class="card-subtitle">Únete a Montestilista</p>
+        </header>
+
+        <div class="form-group">
+          <label for="name-input">Nombre <span class="req">*</span></label>
+          <input type="text" id="name-input" name="name-input" autocomplete="off" placeholder="Ingresa tu nombre y apellido" />
+          <small class="hint">Tanto el nombre como el apellido deben comenzar con mayúscula.</small>
+        </div>
+
+        <div class="form-group">
+          <label for="email-input">Correo <span class="req">*</span></label>
+          <input type="email" id="email-input" name="email-input" autocomplete="off" placeholder="ejemplo@correo.com" />
+          <small class="hint">El correo es requerido.</small>
+        </div>
+
+        <div class="form-group">
+          <label for="password-input">Contraseña <span class="req">*</span></label>
+          <input type="password" id="password-input" name="password-input" autocomplete="off" />
+          <small class="hint">Mínimo 8 caracteres, debe incluir letra y número.</small>
+        </div>
+
+        <div class="form-group">
+          <label for="match-input">Confirmar contraseña <span class="req">*</span></label>
+          <input type="password" id="match-input" name="match-input" autocomplete="off" />
+          <small class="hint">Debe coincidir con la contraseña ingresada.</small>
+        </div>
+
+        <button id="form-btn" disabled class="btn-primary">Registrar</button>
+      </form>
+    </div>
+
+    <script src="../components/nav.js"></script>
+    <script type="module" src="index.js"></script>
+    <script type="module" src="../components/notification.js"></script>
+  </body>
+</html>

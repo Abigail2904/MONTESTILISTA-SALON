@@ -1,0 +1,185 @@
+:root{
+  --bg: #f8f7f5;
+  --card-bg: #ffffff;
+  --accent-1: #c69c6d;
+  --accent-2: #a8814a;
+  --muted: #6b5a49;
+  --border: rgba(161,139,112,0.08);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background: linear-gradient(180deg, var(--bg) 0%, #f3efe9 100%);
+  font-family: 'Cormorant Garamond', serif;
+  color:#222;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Barra (sencilla) */
+#navbar{
+  height:64px;
+  background:transparent;
+  position:fixed;
+  top:0;left:0;right:0;
+  z-index:40;
+}
+
+/* Contenedor principal: reemplaza utilidades tailwind */
+.auth-container{
+  padding-top:80px;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:32px;
+  padding:48px 20px;
+  max-width:1100px;
+  margin:0 auto;
+}
+
+/* Ilustración lateral */
+.auth-aside{ display:flex; align-items:center; justify-content:center; flex:1; }
+.auth-aside img{ max-width:320px; width:100%; object-fit:contain; }
+@media(max-width:900px){ .auth-aside{ display:none; } }
+
+/* Card (reusa estilos del registro) */
+#form{
+  background:var(--card-bg);
+  border-radius:14px;
+  padding:28px;
+  width:100%;
+  max-width:480px;
+  box-shadow: 0 10px 30px rgba(26,22,18,0.06);
+  border:1px solid var(--border);
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+/* Header del formulario */
+#form .card-header{ text-align:center; margin-bottom:6px; }
+#form .card-title{
+  font-family:'Playfair Display', serif;
+  font-size:1.6rem;
+  margin:0;
+  color:#1f1f1f;
+}
+#form .card-subtitle{ margin:6px 0 0; color:var(--muted); font-style:italic; font-size:0.95rem; }
+
+/* Labels e inputs */
+label{ font-weight:600; color:#3a3a3a; display:block; margin-bottom:6px; }
+input[type="email"], input[type="password"]{
+  padding:12px 14px;
+  border-radius:10px;
+  border:1px solid #e6dfd5;
+  background:#fff;
+  font-size:1rem;
+  color:#1b1b1b;
+  transition: box-shadow .18s, border-color .18s, transform .08s;
+  box-shadow: inset 0 1px 0 rgba(0,0,0,0.02);
+}
+input:focus{
+  outline:none;
+  border-color:var(--accent-1);
+  box-shadow: 0 8px 24px rgba(198,156,109,0.08);
+  transform: translateY(-1px);
+}
+
+/* Hint / error text */
+#form #error-text{ margin:0; font-size:0.85rem; color:var(--muted); }
+
+/* Botón */
+#form-btn{
+  display:inline-block;
+  width:100%;
+  padding:12px 14px;
+  border-radius:12px;
+  background: linear-gradient(90deg,var(--accent-1),var(--accent-2));
+  color:#fff;
+  font-weight:700;
+  border:none;
+  cursor:pointer;
+  box-shadow: 0 10px 28px rgba(168,129,75,0.14);
+  transition: transform .12s, box-shadow .12s, opacity .12s;
+}
+#form-btn:active{ transform: translateY(1px); }
+
+/* Estados de validación */
+input.valid{ border:2px solid #16a34a; box-shadow: 0 6px 20px rgba(22,163,74,0.08); }
+input.invalid{ border:2px solid #dc2626; box-shadow: 0 6px 20px rgba(220,38,38,0.06); }
+
+/* Responsive */
+@media(max-width:520px){
+  #form{ padding:20px; border-radius:10px; }
+  .auth-container{ padding:28px 14px; gap:18px; }
+}
+
+/* Ajuste del logo: tamaño proporcional al login */
+.auth-aside{ display:flex; align-items:center; justify-content:center; flex:1; }
+/* reemplaza la regla previa .auth-aside img por esta */
+.signup-illustration{
+  max-width: 180px; /* tamaño acorde al card */
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Variante responsiva: más pequeño en móviles */
+@media (max-width: 520px) {
+  .signup-illustration { max-width: 140px; }
+}
+
+/* Centrar layout del login (aplica a la clase usada en tu HTML: .signup-page) */
+.signup-page {
+  padding-top: 80px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  padding: 48px 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  flex-wrap: nowrap;
+}
+
+/* Asegura que el formulario quede centrado horizontalmente */
+.signup-card {
+  margin: 0 auto;
+}
+
+/* Centrar la imagen del logo al lado del formulario */
+.signup-aside {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+.signup-aside .signup-illustration,
+.signup-illustration {
+  max-width: 180px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Responsive: apilar y centrar en pantallas pequeñas */
+@media (max-width: 900px) {
+  .signup-page {
+    flex-direction: column;
+    padding-top: 56px;
+  }
+  .signup-aside {
+    display:flex; /* si quieres mostrarla encima del form: cambia a display:flex */
+  }
+}
+
+

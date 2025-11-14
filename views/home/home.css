@@ -1,0 +1,468 @@
+/* Estilos del cuerpo de la página */
+body {
+    background-color: #f8f7f5; /* Ejemplo de color claro */
+    font-family: 'NombreDeLaFuentePrincipal', sans-serif;
+}
+
+/* Layout del nav: elementos en línea y centrados */
+nav.main-nav {
+  position: relative;
+  margin-top: 70px; /* mantiene espacio por el botón fijo */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* centro horizontal del nav */
+  width: 100%;
+  max-width: 1100px; /* control de ancho */
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  background-color: #eee0c7; /* color de fondo suave */
+   margin-bottom: 32px;
+}
+
+/* Menú horizontal centrado dentro del nav */
+nav.main-nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* centra los items del UL */
+  gap: 2rem; /* más separación entre elementos */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 1.05rem; /* texto del menú un poco más grande */
+  font-weight: 700;
+}
+
+/* Estilo de cada ítem */
+nav.main-nav ul li {
+  padding: 8px 10px;
+  cursor: pointer;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Logo: tamaño proporcionado al nav */
+nav.main-nav img {
+  height: 64px; /* un poco más grande */
+  width: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 12px;
+}
+
+/* Título principal centrado y más grande */
+h1.logo {
+  text-align: center;
+  font-size: 3rem; /* ajusta según prefieras */
+  font-weight: 800;
+  margin: 28px 0 10px;
+  letter-spacing: 1px;
+}
+
+/* Respuesta en pantallas pequeñas */
+@media (max-width: 900px) {
+  nav.main-nav img {
+    height: 56px;
+  }
+  nav.main-nav ul {
+    gap: 1.2rem;
+    font-size: 1rem;
+  }
+  h1.logo {
+    font-size: 2.4rem;
+  }
+}
+
+@media (max-width: 600px) {
+  nav.main-nav {
+    padding: 10px 12px;
+  }
+  nav.main-nav img {
+    height: 44px;
+  }
+  nav.main-nav ul {
+    gap: 0.8rem;
+    font-size: 0.95rem;
+  }
+  h1.logo {
+    font-size: 1.8rem;
+  }
+}
+
+/* Estilos de la navegación usando Flexbox */
+.main-nav ul {
+    display: flex; /* Alinea los elementos horizontalmente */
+    list-style: none;
+    justify-content: space-around; /* Distribuye el espacio entre los enlaces */
+    padding: 10px 0;
+}
+
+/* Estilos de la rejilla de imágenes */
+.image-grid {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Espacio entre los recuadros */
+    margin-top: 20px;
+}
+
+.image-grid div {
+    width: 150px; /* Ancho de cada recuadro */
+    height: 150px; /* Alto de cada recuadro */
+    border: 1px solid black; /* Borde del recuadro (para simular el placeholder) */
+    background-color: #e0e0e0;
+}
+
+/* Estilos de los textos "Desing" y "Hair" */
+.subtitle-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px; /* Separa los dos textos */
+    font-family: 'NombreDeLaFuenteCursiva', cursive;
+    font-size: 40px;
+    border-bottom: 1px dashed black; /* La línea punteada debajo */
+}
+
+/* Botón agenda fijo en la parte superior derecha */
+.agenda-btn {
+  position: fixed;
+  top: 12px;
+  right: 16px;
+  z-index: 1000;
+  background: #eee0c7;
+  color: #686666;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+/* Responsivo: tamaño y separación menor en móviles */
+@media (max-width: 600px) {
+  .agenda-btn {
+    top: 8px;
+    right: 10px;
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+  nav.main-nav {
+    margin-top: 48px;
+  }
+}
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.carousel-images {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-images img {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+button.prev, button.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255,255,255,0.7);
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+
+button.prev { left: 10px; }
+button.next { right: 10px; }
+
+
+desing hair 
+
+.subtitle-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin-top: 40px;
+  padding-bottom: 36px; /* espacio para el adorno */
+  font-family: 'Playfair Display', serif;
+  color: #3a3a3a;
+  line-height: 1;
+}
+
+/* Palabra superior (estilizada en dorado suave) */
+.subtitle-container .design-text {
+  margin: 0;
+  font-weight: 600;
+  color: #c69c6d;
+  font-size: clamp(28px, 4.2vw, 54px); /* escalable y grande */
+  letter-spacing: 1px;
+}
+
+/* Palabra inferior (más prominente) */
+.subtitle-container .hair-text {
+  margin: 0;
+  font-weight: 700;
+  color: #111;
+  font-size: clamp(36px, 6.8vw, 80px); /* más grande que la superior */
+  letter-spacing: 0.5px;
+}
+
+
+/* Ajustes responsive: reduce tamaños en pantallas pequeñas */
+@media (max-width: 900px) {
+  .subtitle-container .design-text { font-size: clamp(24px, 4.6vw, 44px); }
+  .subtitle-container .hair-text   { font-size: clamp(30px, 7.5vw, 60px); }
+  .subtitle-container::after { width: 72px; }
+  .subtitle-container::before { width: 10px; height: 10px; }
+}
+
+@media (max-width: 420px) {
+  .subtitle-container { padding-bottom: 26px; }
+  .subtitle-container .design-text { font-size: 20px; }
+  .subtitle-container .hair-text { font-size: 28px; }
+  .subtitle-container::after { width: 56px; bottom: 8px; }
+  .subtitle-container::before { width: 8px; height: 8px; bottom: 8px; transform: translate(-50%, -4px); }
+}
+
+.subtitle {
+  font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(0.9rem, 1.6vw, 1.25rem); /* más pequeño que el H1 */
+  color: #6b5a49; /* tono elegante y suave */
+  text-align: center;
+  margin: 6px 0 18px;
+  letter-spacing: 0.6px;
+  opacity: 0.95;
+  text-transform: none;
+  line-height: 1.1;
+}
+
+/* Opcional: una variante con mayúscula inicial elegante */
+.hero .subtitle.capitalize {
+  text-transform: capitalize;
+}
+
+/* Ajustes responsive */
+@media (max-width: 600px) {
+  .hero .subtitle {
+    font-size: clamp(0.85rem, 2.8vw, 1rem);
+    margin-top: 4px;
+    margin-bottom: 12px;
+  }
+}
+
+/* ...existing code... */
+nav.main-nav ul li a.nav-link {
+  color: inherit;
+  text-decoration: none;
+  padding: 6px 8px;
+  display: inline-block;
+}
+nav.main-nav ul li a.nav-link:hover {
+  text-decoration: underline;
+}
+/* ...existing code... */
+
+/* Tendencias: dos thumbnails y panel deslizante */
+.tendencias-section { max-width: 1100px; margin: 28px auto; padding: 0 18px; box-sizing: border-box; }
+.tendencias-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 16px;
+  align-items: start;
+  justify-items: center;
+}
+.tendencia-item {
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+  max-width: 260px; /* tamaño pequeño */
+  transition: transform .16s ease, box-shadow .16s ease;
+  border-radius: 10px;
+  padding: 8px;
+  background: transparent;
+}
+.tendencia-item:focus, .tendencia-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(16,16,16,0.06);
+  outline: none;
+}
+.tendencia-thumb {
+  width: 100%;
+  height: auto;
+  max-height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+.tendencia-title { margin-top:8px; font-weight:600; color:#333; font-size:0.95rem; }
+
+/* Panel deslizante (oculto por defecto) */
+.product-info-panel {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height .36s ease, opacity .3s ease;
+  opacity: 0;
+  margin-top: 12px;
+  border-radius: 10px;
+}
+.product-info-panel.open {
+  max-height: 420px; /* ajusta según contenido */
+  opacity: 1;
+}
+.product-info-content {
+  background: #fff;
+  border: 1px solid rgba(161,139,112,0.08);
+  box-shadow: 0 12px 36px rgba(26,22,18,0.06);
+  padding: 16px;
+  border-radius: 10px;
+}
+.product-name { font-family: 'Playfair Display', serif; font-size:1.2rem; margin:0 0 6px; }
+.product-desc { color:#6b5a49; margin:0 0 8px; }
+.product-price { font-weight:700; color:#1f1f1f; margin:0 0 12px; }
+.close-product {
+  background: linear-gradient(90deg,#c69c6d,#a8814a);
+  color:#fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Responsive: apilar en móvil */
+@media (max-width:700px) {
+  .tendencias-grid { grid-template-columns: 1fr 1fr; gap:12px; }
+  .tendencia-item { max-width: 46vw; }
+}
+@media (max-width:460px) {
+  .tendencias-grid { grid-template-columns: 1fr; }
+  .product-info-panel.open { max-height: 360px; }
+}
+
+/* ...existing code... */
+h2.tendencias {
+  font-family: 'Playfair Display', 'Cormorant Garamond', serif;
+  text-align: center;
+  font-weight: 700;
+  font-size: clamp(1.25rem, 3.4vw, 2rem);
+  color: #1f1f1f;
+  margin: 32px auto 18px;
+  letter-spacing: 0.6px;
+  position: relative;
+}
+
+/* Adorno sutil bajo el título */
+h2.tendencias::after {
+  content: "";
+  display: block;
+  width: 84px;
+  height: 3px;
+  margin: 10px auto 0;
+  background: linear-gradient(90deg,#c69c6d,#a8814a);
+  border-radius: 2px;
+  opacity: 0.95;
+}
+
+/* Ajustes en pantallas pequeñas */
+@media (max-width: 600px) {
+  h2.tendencias {
+    font-size: clamp(1rem, 5.4vw, 1.25rem);
+    margin-top: 20px;
+  }
+  h2.tendencias::after {
+    width: 60px;
+    height: 2px;
+  }
+}
+/* ...existing code... *//* ...existing code... */
+
+/* Tres cajas informativas bajo "NUEVAS TENDENCIAS" */
+.info-row {
+  max-width: 1100px;
+  margin: 28px auto 48px;
+  padding: 0 18px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  box-sizing: border-box;
+}
+
+.info-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 18px;
+  text-align: center;
+  border: 1px solid rgba(161,139,112,0.06);
+  box-shadow: 0 8px 22px rgba(26,22,18,0.04);
+}
+
+.info-card .icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(90deg,#c69c6d,#a8814a);
+  color: #fff;
+  font-size: 22px;
+  box-shadow: 0 8px 20px rgba(168,129,75,0.12);
+}
+
+.info-title {
+  font-family: 'Playfair Display', 'Cormorant Garamond', serif;
+  font-weight: 700;
+  margin: 6px 0;
+  font-size: 1.05rem;
+  color: #1f1f1f;
+}
+
+.info-text {
+  color: #6b5a49;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.info-text a {
+  color: #a8814a;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.info-text a:hover { text-decoration: underline; }
+
+/* Enlaces de redes */
+.social-links a {
+  color: #6b5a49;
+  text-decoration: none;
+  font-weight: 600;
+}
+.social-links a:hover {
+  color: #a8814a;
+  text-decoration: underline;
+}
+
+/* Responsive: apilar una columna en móviles */
+@media (max-width: 880px) {
+  .info-row {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 0 14px;
+  }
+}
+

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+    <title>MONTESTILISTA</title>
+  </head>
+  <body>
+    <h1 class="logo">MONTESTILISTA</h1>
+    <h2 class="subtitle">love for hair</h2>
+    <button class="agenda-btn" id="agendaBtn">¡AGENDA TU CITA AQUI!</button>
+  <nav class="main-nav">
+    <div class="menu-icono"></div>
+     <ul>
+       <li>INICIO</li>
+       <li>SERVICIOS</li>
+       <img src="/imag/logo sin fondo.png" alt="logo del nav">
+       <li>PRODUCTOS</li>
+       <li><a href="../signup/index.html" class="nav-link">REGISTRO</a></li>
+      </ul>
+   </nav>
+  <main>
+    <section class="hero"> 
+    <div class="carousel">
+      <div class="carousel-images">
+        <img src="/imag/carrusel home 1.jpg" alt="Imagen 1">
+        <img src="/imag/carrusel home 2.jpg" alt="Imagen 2">
+        <img src="/imag/carrusel home 3.jpg" alt="Imagen 3">
+        <img src="/imag/carrusel home 4.jpg" alt="Imagen 4">
+      </div>
+      <button class="prev">❮</button>
+      <button class="next">❯</button>
+    </div>
+    <div class="subtitle-container">
+      <span class="design-text">Desing</span>
+      <span class="hair-text">Hair</span>
+    </div>
+    </section>
+  </main>
+  <h2 class="tendencias">NUEVAS TENDENCIAS</h2>
+ <section class="tendencias-section">
+ <div class="tendencias-grid">
+    <figure class="tendencia-item" data-id="1" tabindex="0">
+     <img src="/imag/ALISADO LASER1.jpg" alt="Tendencia 1" class="tendencia-thumb">
+       <figcaption class="tendencia-title"></figcaption>
+     </figure>
+     <figure class="tendencia-item" data-id="2" tabindex="0">
+       <img src="/imag/ALISADO LASER 2.jpg" alt="Tendencia 2" class="tendencia-thumb">
+       <figcaption class="tendencia-title"></figcaption>
+     </figure>
+   </div>
+
+   <div class="product-info-panel" id="productPanel" aria-hidden="true">
+     <div class="product-info-content" id="productContent">
+       <h3 class="product-name"></h3>
+       <p class="product-desc"></p>
+       <p class="product-price"></p>
+       <button class="close-product" id="closeProduct" aria-label="Cerrar">Cerrar</button>
+     </div>
+   </div>
+ </section>
+<!-- ...existing code... -->
+</section> <!-- cierra tendencias-section si aplica -->
+
+<!-- Tres cajas: Ubicación / Contacto / Redes -->
+<section class="info-row" aria-label="Información de contacto">
+  <div class="info-card">
+    <div class="icon" aria-hidden="true">📍</div>
+    <h4 class="info-title">Ubicación</h4>
+    <p class="info-text">Bogota 924. Buenos aires Capital. </p>
+  </div>
+
+  <div class="info-card">
+    <div class="icon" aria-hidden="true">☎️</div>
+    <h4 class="info-title">Contacto</h4>
+    <p class="info-text">Tel: <a href="tel:+51900000000">+54 911 66286255</a><br>Email: <a href="mailto:contacto@montestilista.com">contacto@montestilista.com</a></p>
+  </div>
+
+  <div class="info-card">
+    <div class="icon" aria-hidden="true">🔗</div>
+    <h4 class="info-title">Redes Sociales</h4>
+    <p class="info-text social-links">
+      <a href="#" target="_blank" rel="noopener">Instagram</a> ·
+      <a href="#" target="_blank" rel="noopener">Facebook</a> ·
+      <a href="#" target="_blank" rel="noopener">WhatsApp</a>
+    </p>
+  </div>
+</section>
+
+
+   <script src="home.js"></script>
+  </body>
+</html>
