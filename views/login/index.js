@@ -19,7 +19,7 @@ form.addEventListener('submit', async e => {
     // Envía una petición HTTP POST al backend, a la ruta '/api/login'
         // El objeto 'user' se envía en el cuerpo de la petición
     await axios.post('/api/login', user);
-    window.location.pathname = `/todos/`; // Si la respuesta es exitosa (no hay errores),
+    window.location.pathname = ('/promociones'); // Si la respuesta es exitosa (no hay errores),
         // redirige al usuario a la página principal de tareas
 
     } catch(error) {

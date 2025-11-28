@@ -6,7 +6,7 @@ const userSchema = new mongoose.Schema({ //tabla usuarios
     passwordHash: String,
     verified: {
         type: Boolean,
-        default: false
+        default: true
     },
     todos: [{
         type: mongoose.Schema.Types.ObjectId,

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="agenda.css">
+    <title>CITA</title>
+</head>
+<body>
+     <h1 class="logo">MONTESTILISTA</h1>
+    <h2 class="subtitle">love for hair</h2>
+    <a href="../agenda/agenda.html" class="agenda-btn" id="agendaBtn">¡AGENDA TU CITA AQUI!</a>
+  <nav class="main-nav">
+    <div class="menu-icono"></div>
+     <ul>
+       <li><a href="../home/index.html" class="nav-link">INICIO</a></li> 
+       <li>SERVICIOS</li>
+       <img src="/imag/logo sin fondo.png" alt="logo del nav">
+       <li>PRODUCTOS</li>
+       <li><a href="../login/index.html" class="nav-link">LOGIN</a></li>
+      </ul>
+   </nav>
+   <h2>Agendar Cita</h2>
+  <form id="formCita">
+    <label>Nombre:</label><br>
+    <input type="text" id="nombre" required><br><br>
+
+    <label>Teléfono:</label><br>
+    <input type="text" id="telefono" required><br><br>
+
+   <label for="servicio">Servicio:</label>
+<input type="text" id="servicio" placeholder="Escribe el servicio que deseas" required><br><br>
+
+    <label>Fecha:</label><br>
+    <input type="date" id="fecha" required><br><br>
+
+    <label>Hora:</label><br>
+    <input type="time" id="hora" required><br><br>
+
+    <button type="submit">Agendar cita</button>
+  </form>
+    <script src="agenda.js"></script>
+</body>
+</html>

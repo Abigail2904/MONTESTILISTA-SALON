@@ -1,0 +1,222 @@
+/* Estilos del cuerpo de la página */
+body {
+    background-color: #f8f7f5; /* Ejemplo de color claro */
+    font-family: 'NombreDeLaFuentePrincipal', sans-serif;
+}
+
+/* Layout del nav: elementos en línea y centrados */
+nav.main-nav {
+  position: relative;
+  margin-top: 70px; /* mantiene espacio por el botón fijo */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* centro horizontal del nav */
+  width: 100%;
+  max-width: 1100px; /* control de ancho */
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  background-color: #eee0c7; /* color de fondo suave */
+   margin-bottom: 32px;
+}
+
+/* Menú horizontal centrado dentro del nav */
+nav.main-nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* centra los items del UL */
+  gap: 2rem; /* más separación entre elementos */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 1.05rem; /* texto del menú un poco más grande */
+  font-weight: 700;
+}
+
+/* Estilo de cada ítem */
+nav.main-nav ul li {
+  padding: 8px 10px;
+  cursor: pointer;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Logo: tamaño proporcionado al nav */
+nav.main-nav img {
+  height: 64px; /* un poco más grande */
+  width: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 12px;
+}
+nav.main-nav ul li a.nav-link {
+  color: inherit;
+  text-decoration: none;
+  padding: 6px 8px;
+  display: inline-block;
+}
+nav.main-nav ul li a.nav-link:hover {
+  text-decoration: underline;
+}
+/* Título principal centrado y más grande */
+h1.logo {
+  text-align: center;
+  font-size: 3rem; /* ajusta según prefieras */
+  font-weight: 800;
+  margin: 28px 0 10px;
+  letter-spacing: 1px;
+}
+
+/* Respuesta en pantallas pequeñas */
+@media (max-width: 900px) {
+  nav.main-nav img {
+    height: 56px;
+  }
+  nav.main-nav ul {
+    gap: 1.2rem;
+    font-size: 1rem;
+  }
+  h1.logo {
+    font-size: 2.4rem;
+  }
+}
+
+@media (max-width: 600px) {
+  nav.main-nav {
+    padding: 10px 12px;
+  }
+  nav.main-nav img {
+    height: 44px;
+  }
+  nav.main-nav ul {
+    gap: 0.8rem;
+    font-size: 0.95rem;
+  }
+  h1.logo {
+    font-size: 1.8rem;
+  }
+}
+
+/* Estilos de la navegación usando Flexbox */
+.main-nav ul {
+    display: flex; /* Alinea los elementos horizontalmente */
+    list-style: none;
+    justify-content: space-around; /* Distribuye el espacio entre los enlaces */
+    padding: 10px 0;
+}
+
+/* Botón agenda fijo en la parte superior derecha */
+.agenda-btn {
+  position: fixed;
+  top: 12px;
+  right: 16px;
+  z-index: 1000;
+  background: #eee0c7;
+  color: #686666;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+/* Responsivo: tamaño y separación menor en móviles */
+@media (max-width: 600px) {
+  .agenda-btn {
+    top: 8px;
+    right: 10px;
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+  nav.main-nav {
+    margin-top: 48px;
+  }
+}
+/* Palabra inferior (más prominente) */
+.subtitle-container .hair-text {
+  margin: 0;
+  font-weight: 700;
+  color: #111;
+  font-size: clamp(36px, 6.8vw, 80px); /* más grande que la superior */
+  letter-spacing: 0.5px;
+}
+.subtitle {
+  font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(0.9rem, 1.6vw, 1.25rem); /* más pequeño que el H1 */
+  color: #6b5a49; /* tono elegante y suave */
+  text-align: center;
+  margin: 6px 0 18px;
+  letter-spacing: 0.6px;
+  opacity: 0.95;
+  text-transform: none;
+  line-height: 1.1;
+}
+
+estilos formulario 
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f5f2e7; /* fondo arena claro */
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+form {
+  background: #fffaf0; /* tono marfil */
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 520px; /* ancho del card (centrado y responsivo) */
+  margin: 0 auto; /* centra horizontalmente */
+  box-sizing: border-box;
+}
+
+h2 {
+  text-align: center;
+  color: #8b6f47; /* marrón arena */
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #6b4f2d;
+}
+
+input, select, button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #d9cbb3;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #c2a97b;
+  box-shadow: 0 0 6px rgba(194,169,123,0.6);
+}
+
+button {
+  background: linear-gradient(135deg, #c2a97b, #a68a64);
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #a68a64, #8b6f47);
+}

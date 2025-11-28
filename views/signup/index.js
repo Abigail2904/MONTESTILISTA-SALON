@@ -93,16 +93,16 @@ form.addEventListener('submit', async (e) => {
     console.log('nuevo usuario',newUser);
 
     const { data }= await axios.post('/api/users', newUser);
-     createNotification(false, data);
+     createNotification(false, data); 
     setTimeout(() => {
         notification.innerHTML = '';
     }, 5000)
 
-    nameInput.value = '';
+    nameInput.value = ''; 
     emailInput.value = '';
     passwordInput.value = '';
     matchInput.value = '';
-    validations(nameInput, false);
+    validations(nameInput, false); 
    validations(emailInput, false);
    validations(passwordInput, false);
    validations(matchInput, false);

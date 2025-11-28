@@ -1,27 +1,58 @@
-//carrusel de Imagen con movimuiento
-const images = document.querySelector('.carousel-images');
-const total = images.children.length;
-let index = 0;
+const input = document.querySelector('input');
+const ul = document.querySelector('ul');
+const addBtn = document.querySelector('.add-btn');
+const invalidCheck = document.querySelector('.invalid-check');
+const form = document.querySelector('#form');
+const totalCountSpan = document.querySelector('.total-count');
+const completedCountSpan = document.querySelector('.completed-count');
+const incompletedCountSpan = document.querySelector('.incompleted-count');
 
-function showSlide(i) {
-  images.style.transform = `translateX(-${i * 100}%)`;
-}
 
-document.querySelector('.next').addEventListener('click', () => {
-  index = (index + 1) % total;
-  showSlide(index);
+//carrusel de Imagen con movimiento
+
+document.addEventListener('DOMContentLoaded', () => {
+  const carouselEl = document.querySelector('.carrusel');
+  const images = carouselEl ? Array.from(carouselEl.querySelectorAll('img')) : [];
+  let index = 0;
+  let intervalId = null;
+
+  if (images.length === 0) return;
+
+  function showImage(i) {
+    images.forEach(img => img.classList.remove('active'));
+    const img = images[i % images.length];
+    if (img) img.classList.add('active');
+  }
+
+  function startInterval() {
+    stopInterval();
+    intervalId = setInterval(() => {
+      index = (index + 1) % images.length; // siempre vuelve a 0 cuando llega al final
+      showImage(index);
+    }, 1000);
+  }
+
+  function stopInterval() {
+    if (intervalId) {
+      clearInterval(intervalId);
+      intervalId = null;
+    }
+  }
+
+  // mostrar primera imagen y arrancar autoplay
+  index = 0;
+  showImage(index);
+  startInterval();
+
+  // pausa al hover y reinicia al salir
+  if (carouselEl) {
+    carouselEl.addEventListener('mouseenter', stopInterval);
+    carouselEl.addEventListener('mouseleave', startInterval);
+  }
 });
 
-document.querySelector('.prev').addEventListener('click', () => {
-  index = (index - 1 + total) % total;
-  showSlide(index);
-});
 
-// ⏱️ Desplazamiento automático cada 4 segundos
-setInterval(() => {
-  index = (index + 1) % total;
-  showSlide(index);
-}, 4000);
+ 
 
 // Panel de información del producto desplegable// ...existing code...
 
