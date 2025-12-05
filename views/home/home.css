@@ -119,7 +119,7 @@ h1.logo {
     gap: 50px; /* Separa los dos textos */
     font-family: 'NombreDeLaFuenteCursiva', cursive;
     font-size: 40px;
-    border-bottom: 1px dashed black; /* La línea punteada debajo */
+   
 }
 
 /* Botón agenda fijo en la parte superior derecha */
@@ -150,37 +150,48 @@ h1.logo {
     margin-top: 48px;
   }
 }
+.hero {
+  width: 100%;
+  overflow: hidden;   /* Oculta lo que se sale del contenedor */
+  background: #f7f2f2;   /* Opcional: fondo */
+}
+
 .carrusel {
-      overflow: hidden;
-      white-space: nowrap;
-      box-sizing: border-box;
-      width: 100%;
-      background: #f0f0f0;
-    }
-   
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
 
-    .carrusel-contenido {
-      display: inline-block;
-      animation: rodar 20s linear infinite;
-    }
+.carrusel-contenido {
+  display: flex;
+  /* Las imágenes se colocan en fila */
+  animation: scroll 40s linear infinite;
+}
 
-    .carrusel img {
-      width: 200px;
-      height: 200px;
-      object-fit: cover;
-      margin: 0 10px;
-      display: inline-block;
+.carrusel-contenido img {
+  flex: 0 0 auto;       /* No se encogen */
+  width: 250px;         /* Ajusta el tamaño según tu diseño */
+  height: auto;
+  margin-right: 20px;   /* Espacio entre imágenes */
+  border-radius: 8px;   /* Opcional */
+}
 
-    }
+/* Animación: mueve el track a la izquierda hasta la mitad
+   porque duplicaste las imágenes */
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
 
-    @keyframes rodar {
-      from {
-transform: translateX(0);
-      }
-      to {
-        transform: translateX(-100%);
-      }
-    }
+/* Opcional: pausa al pasar el mouse */
+.carrusel:hover .carrusel-contenido {
+  animation-play-state: paused;
+}
+
 
 
 button.prev, button.next {
@@ -321,6 +332,17 @@ nav.main-nav ul li a.nav-link:hover {
   border-radius: 8px;
   display: block;
 }
+
+.tendencia-sub {
+  text-align: center;        /* Centra el texto */
+  font-size: 2rem;           /* Tamaño elegante (ajusta según tu diseño) */
+  font-weight: 500;          /* Peso medio para sofisticación */
+  font-family: "Playfair Display", serif; /* Fuente elegante (puedes usar Google Fonts) */
+  color: #333;               /* Color sobrio, puedes cambiar a dorado (#c9a227) o blanco */
+  margin: 20px 0;            /* Espaciado arriba y abajo */
+  letter-spacing: 1px;       /* Espaciado entre letras para más estilo */
+}
+
 .tendencia-title { margin-top:8px; font-weight:600; color:#333; font-size:0.95rem; }
 
 /* Panel deslizante (oculto por defecto) */
@@ -486,4 +508,55 @@ h2.tendencias::after {
   background: #eee0c7;
   color: #686666;  /* ...existing code... */
 }
-  /* Tips sobre cuidado capilar: diseño armonioso y elegante */
+  .equipo {
+  text-align: center;
+  padding: 60px 20px;
+  background: #f9f9f9; /* Fondo suave */
+}
+
+.equipo h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  font-family: "Playfair Display", serif; /* Fuente elegante */
+  color: #333;
+}
+
+.equipo-contenedor {
+  display: flex;
+  flex-wrap: wrap;       /* Se adapta en pantallas pequeñas */
+  justify-content: center;
+  gap: 30px;             /* Espacio entre tarjetas */
+}
+
+.equipo-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  width: 250px;
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+.equipo-card:hover {
+  transform: translateY(-10px); /* Efecto elegante al pasar el mouse */
+}
+
+.equipo-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.equipo-card h3 {
+  font-size: 1.4rem;
+  margin: 10px 0 5px;
+  color: #222;
+}
+
+.equipo-card p {
+  font-size: 1rem;
+  color: #666;
+}
+

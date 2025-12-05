@@ -7,53 +7,6 @@ const totalCountSpan = document.querySelector('.total-count');
 const completedCountSpan = document.querySelector('.completed-count');
 const incompletedCountSpan = document.querySelector('.incompleted-count');
 
-
-//carrusel de Imagen con movimiento
-
-document.addEventListener('DOMContentLoaded', () => {
-  const carouselEl = document.querySelector('.carrusel');
-  const images = carouselEl ? Array.from(carouselEl.querySelectorAll('img')) : [];
-  let index = 0;
-  let intervalId = null;
-
-  if (images.length === 0) return;
-
-  function showImage(i) {
-    images.forEach(img => img.classList.remove('active'));
-    const img = images[i % images.length];
-    if (img) img.classList.add('active');
-  }
-
-  function startInterval() {
-    stopInterval();
-    intervalId = setInterval(() => {
-      index = (index + 1) % images.length; // siempre vuelve a 0 cuando llega al final
-      showImage(index);
-    }, 1000);
-  }
-
-  function stopInterval() {
-    if (intervalId) {
-      clearInterval(intervalId);
-      intervalId = null;
-    }
-  }
-
-  // mostrar primera imagen y arrancar autoplay
-  index = 0;
-  showImage(index);
-  startInterval();
-
-  // pausa al hover y reinicia al salir
-  if (carouselEl) {
-    carouselEl.addEventListener('mouseenter', stopInterval);
-    carouselEl.addEventListener('mouseleave', startInterval);
-  }
-});
-
-
- 
-
 // Panel de información del producto desplegable// ...existing code...
 
 // --- Tendencias: panel info dinámico ---
