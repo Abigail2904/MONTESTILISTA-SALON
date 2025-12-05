@@ -50,7 +50,7 @@ app.use('/api/users', usersRouter);
 app.use('/api/login', loginRouter);
 app.use('/api/promociones', userExtractor, todosRouter);
 app.use('/api/logout', logoutRouter);
-app.use
+
 
 
 
