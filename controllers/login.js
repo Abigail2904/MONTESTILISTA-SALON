@@ -8,7 +8,7 @@ const jwt = require('jsonwebtoken');
 //Ruta POST / (login)
 loginRouter.post('/', async (request, response) => {
     const { email, password } = request.body;  //Obtener credenciales 
-    // console.log(email, password);
+     console.log(email, password);
     const userExist = await User.findOne({ email }) //Buscar el usuario en la base de datos
      console.log('este es el user exist', userExist); 
 

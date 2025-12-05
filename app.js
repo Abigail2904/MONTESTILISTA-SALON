@@ -15,6 +15,7 @@ const { userExtractor } = require('./middleware/auth'); //importar el middleware
 const logoutRouter = require('./controllers/logout'); //importar el router de logout
 const { MONGO_URI } = require('./config'); //importar la URI de MongoDB desde la configuración
 
+
 (async() => {
     try {
         await mongoose.connect(MONGO_URI);  
@@ -41,6 +42,7 @@ app.use('/promociones', express.static(path.resolve('views','promociones')));
 app.use('/agenda', express.static(path.resolve('views','agenda')));
 app.use('/servicios', express.static(path.resolve('views','servicios')));
 app.use('/Produ', express.static(path.resolve('views','Produ')));
+app.use('/admin', express.static(path.resolve('views','admin')));
 
 app.use(morgan('tiny'));
 

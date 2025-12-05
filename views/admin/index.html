@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administrar Promociones</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fdf6ec;
+      margin: 0;
+      padding: 0;
+      color: #4a3c2a;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      background: #fff8f0;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #3e2f1c;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    label {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    input, select, textarea {
+      padding: 10px;
+      border: 1px solid #d9c9a9;
+      border-radius: 8px;
+      font-size: 1em;
+      background-color: #fffaf3;
+      color: #4a3c2a;
+    }
+
+    select[multiple] {
+      height: auto;
+      min-height: 120px;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    small {
+      font-size: 0.9em;
+      color: #7a6a4f;
+    }
+
+    button {
+      background: linear-gradient(135deg, #e6d3b3, #f5e3c3);
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 1.1em;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: linear-gradient(135deg, #d9b98a, #e6d3b3);
+    }
+
+    .promo-list {
+      margin-top: 30px;
+    }
+
+    .promo-item {
+      background: #fffaf3;
+      border: 1px solid #e6d3b3;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 15px;
+    }
+
+    .promo-item h3 {
+      margin: 0 0 10px;
+      color: #3e2f1c;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 20px;
+      }
+      h2 {
+        font-size: 1.6em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Administrar Promociones</h2>
+    <form>
+      <div>
+        <label for="especialidad">Especialidades</label>
+        <select id="especialidad" name="especialidad[]" multiple required>
+          <option value="Peluquería">Peluquería</option>
+          <option value="Barbería">Barbería</option>
+          <option value="Manicura & Pedicura">Manicura & Pedicura</option>
+          <option value="Cosmetología">Cosmetología</option>
+          <option value="Maquillaje">Maquillaje</option>
+          <option value="Depilación Láser">Depilación Láser</option>
+        </select>
+        <small>Pulsa Ctrl (Windows) o Cmd (Mac) para seleccionar varias</small>
+      </div>
+
+      <div>
+        <label for="tipo">Tipo de Promoción</label>
+        <select id="tipo" name="tipo" required>
+          <option value="Diaria">Diaria</option>
+          <option value="Semanal">Semanal</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="titulo">Título</label>
+        <input type="text" id="titulo" name="titulo" placeholder="Ej: 20% descuento en cortes" required>
+      </div>
+
+      <div>
+        <label for="descripcion">Descripción</label>
+        <textarea id="descripcion" name="descripcion" rows="3" placeholder="Detalles de la promoción..." required></textarea>
+      </div>
+
+      <div>
+        <label for="fecha">Fecha</label>
+        <input type="date" id="fecha" name="fecha" required>
+      </div>
+
+      <button type="submit">Agregar Promoción</button>
+    </form>
+
+    <div class="promo-list">
+      <h2>Promociones Actuales</h2>
+      <div class="promo-item">
+        <h3>20% descuento en cortes (Semanal)</h3>
+        <p><strong>Especialidades:</strong> Peluquería, Manicura & Pedicura</p>
+        <p><strong>Descripción:</strong> Disponible toda la semana en cortes modernos.</p>
+        <p><strong>Fecha:</strong> 05/12/2025</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
