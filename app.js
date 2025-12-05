@@ -1,4 +1,5 @@
- require('dotenv').config();
+
+require('dotenv').config();
 const express = require('express'); 
 const app = express();
 const mongoose = require('mongoose'); //mongoose para mongodb
@@ -12,8 +13,7 @@ const loginRouter = require('./controllers/login'); //importar el router de logi
 const todosRouter = require('./controllers/todos'); //importar el router de todos
 const { userExtractor } = require('./middleware/auth'); //importar el middleware de autenticación
 const logoutRouter = require('./controllers/logout'); //importar el router de logout
-const { MONGO_URI } = require('./config');
-
+const { MONGO_URI } = require('./config'); //importar la URI de MongoDB desde la configuración
 
 (async() => {
     try {
@@ -37,6 +37,10 @@ app.use('/imag', express.static(path.resolve('imag')));
 app.use('/verify/:id/:token', express.static(path.resolve('views','verify')));
 app.use('/todos', express.static(path.resolve('views', 'todos')));
 app.use('/styles', express.static(path.resolve('views','styles')));
+app.use('/promociones', express.static(path.resolve('views','promociones')));
+app.use('/agenda', express.static(path.resolve('views','agenda')));
+app.use('/servicios', express.static(path.resolve('views','servicios')));
+app.use('/Produ', express.static(path.resolve('views','Produ')));
 
 app.use(morgan('tiny'));
 
@@ -46,6 +50,8 @@ app.use('/api/users', usersRouter);
 app.use('/api/login', loginRouter);
 app.use('/api/promociones', userExtractor, todosRouter);
 app.use('/api/logout', logoutRouter);
+app.use
+
 
 
 
