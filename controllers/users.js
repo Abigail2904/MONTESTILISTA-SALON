@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken'); //libreria para crear y verificar tokens
 const { createTestAccount } = require('nodemailer'); //libreria para enviar correos
 const nodemailer = require('nodemailer'); //libreria para enviar correos
 const { PAGE_URL } = require('../config'); //importar la url de la pagina desde config
-const { data } = require('autoprefixer'); //importar datos de autoprefixer
+
 
 
 // Obtener todos los usuarios 
