@@ -1,9 +1,9 @@
    body {
       font-family: 'Segoe UI', sans-serif;
-      background-color: #fdf6ec;
+      background-color: #fdf6e3; /* tono arena cálido */
       margin: 0;
       padding: 0;
-      color: #4a3c2a;
+      color: #0e0d0d;
     }
 
     .producciones {
@@ -81,40 +81,40 @@
     /* Layout del nav: elementos en línea y centrados */
 /* Estilos del cuerpo de la página */
 body {
-    background-color: #f8f7f5; /* Ejemplo de color claro */
+    background-color: #fdf6e3; /* Ejemplo de color claro */
     font-family: 'NombreDeLaFuentePrincipal', sans-serif;
 }
 
 /* Layout del nav: elementos en línea y centrados */
 nav.main-nav {
   position: relative;
-  margin-top: 70px; /* mantiene espacio por el botón fijo */
+  margin-top: 70px;
   display: flex;
   align-items: center;
-  justify-content: center; /* centro horizontal del nav */
+  justify-content: space-between; /* logo a la izquierda, menú a la derecha */
   width: 100%;
-  max-width: 1100px; /* control de ancho */
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 1100px;
+  margin-inline: auto;
   box-sizing: border-box;
-  background-color: #eee0c7; /* color de fondo suave */
-   margin-bottom: 32px;
+  background-color: #eee0c7;
+  padding: 10px 20px;
+  margin-bottom: 32px;
 }
 
-/* Menú horizontal centrado dentro del nav */
+/* Menú horizontal en pantallas grandes */
 nav.main-nav ul {
-  display: flex;
+  display: contents; /* mejor que contents para control responsivo */
   align-items: center;
-  justify-content: center; /* centra los items del UL */
-  gap: 2rem; /* más separación entre elementos */
+  justify-content: flex-end;
+  gap: clamp(0.8rem, 2vw, 2rem);
   list-style: none;
   margin: 0;
   padding: 0;
-  font-size: 1.05rem; /* texto del menú un poco más grande */
+  font-size: clamp(0.9rem, 1.05vw, 1.05rem);
   font-weight: 700;
+  flex-wrap: wrap;
 }
 
-/* Estilo de cada ítem */
 nav.main-nav ul li {
   padding: 8px 10px;
   cursor: pointer;
@@ -122,13 +122,58 @@ nav.main-nav ul li {
   white-space: nowrap;
 }
 
-/* Logo: tamaño proporcionado al nav */
 nav.main-nav img {
-  height: 64px; /* un poco más grande */
+  height: clamp(40px, 6vw, 64px);
   width: auto;
   object-fit: contain;
   display: block;
   margin: 0 12px;
+}
+
+/* --- RESPONSIVE --- */
+
+/* Tablets y móviles */
+@media (max-width: 768px) {
+  nav.main-nav {
+    flex-direction: column; /* logo arriba, menú abajo */
+    align-items: flex-start;
+    padding: 15px;
+  }
+
+  nav.main-nav ul {
+    flex-direction: column; /* menú vertical */
+    align-items: flex-start;
+    gap: 1rem;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  nav.main-nav ul li {
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+  }
+
+  nav.main-nav img {
+    margin: 0 auto; /* logo centrado */
+  }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+  nav.main-nav {
+    margin-top: 40px;
+    padding: 10px;
+  }
+
+  nav.main-nav ul {
+    font-size: 0.9rem;
+    gap: 0.8rem;
+  }
+
+  nav.main-nav img {
+    height: 48px;
+  }
 }
 nav.main-nav ul li a.nav-link {
   color: inherit;
@@ -233,4 +278,51 @@ h1.logo {
   opacity: 0.95;
   text-transform: none;
   line-height: 1.1;
+}
+.galeria-creativa {
+  padding: 40px 20px;
+  background: #fdf6ec; /* tono cálido */
+}
+
+.masonry {
+  column-count: 3; /* número de columnas en escritorio */
+  column-gap: 15px;
+}
+
+.item {
+  break-inside: avoid;
+  margin-bottom: 15px;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item img {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+  transition: transform 0.4s ease;
+}
+
+.item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.item img:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .masonry {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .masonry {
+    column-count: 1;
+  }
 }

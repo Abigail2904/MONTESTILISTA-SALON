@@ -1,27 +1,61 @@
 <!DOCTYPE html>
-<html lang="en" class="h-webkit-fill inter-font scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Audiowide&family=Inter:wght@300;400;500&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/styles/output.css" />
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
-    <title>PROMOCIONES</title>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Promociones</title>
+  <style>
+    body { font-family: 'Segoe UI', sans-serif; background: #fdf6e3; color: #5a4632; }
+    .promo { background: #fff8e7; border: 1px solid #d2b48c; margin: 10px; padding: 15px; border-radius: 8px; }
+    h3 { color: #8b6f47; }
+    .volver-home-btn{
+      display:inline-block;
+      margin:12px 0 18px 0;
+      background: linear-gradient(180deg,#fff8e7,#f3e0c8);
+      color: #5a4632;
+      padding:10px 16px;
+      border-radius:10px;
+      border:1px solid rgba(90,70,50,0.08);
+      text-decoration:none;
+      font-weight:700;
+      box-shadow: 0 8px 20px rgba(90,70,50,0.06);
+      transition: transform .14s ease, box-shadow .14s ease;
+    }
+    .volver-home-btn:hover{ transform: translateY(-3px); box-shadow: 0 12px 28px rgba(90,70,50,0.10); }
+    .volver-home-btn:focus{ outline: 3px solid rgba(163,125,80,0.12); outline-offset: 3px; }
+  </style>
+</head>
 <body>
-  <h1>Promociones disponibles</h1>
-  <ul>
-    <li>Promoción 1: 20% de descuento en cortes de cabello.</li>
-    <li>Promoción 2: Alisado láser por $50.</li>
-    <li>Promoción 3: Tratamiento de keratina + lavado gratis.</li>
-    <li>Promoción 4: Compra 2 productos y lleva el 3ro gratis.</li>
-    <li>Promoción 5: Descuento del 15% en servicios para estudiantes.</li>
-  </ul>
+  <h1>Promociones Activas</h1>
+  <div id="activePromos"></div>
+   <a href="/" class="volver-home-btn">INICIO</a>
+  <div id="activePromos"></div>
+
+  <script>
+    async function loadActivePromotions() {
+      try {
+        const response = await fetch("/api/promociones-activas");
+        const promos = await response.json();
+
+        const container = document.getElementById("activePromos");
+        container.innerHTML = "";
+
+        promos.forEach(promo => {
+          const div = document.createElement("div");
+          div.className = "promo";
+          div.innerHTML = `
+            <h3>${promo.title}</h3>
+            <p>${promo.description}</p>
+            <small>${new Date(promo.startDate).toLocaleDateString()} - ${new Date(promo.endDate).toLocaleDateString()}</small>
+          `;
+          container.appendChild(div);
+        });
+      } catch (error) {
+        console.error(error);
+        alert("Error al cargar promociones");
+      }
+    }
+
+    loadActivePromotions();
+  </script>
 </body>
 </html>

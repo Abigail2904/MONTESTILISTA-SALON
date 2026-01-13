@@ -19,7 +19,7 @@ document.getElementById("formCita").addEventListener("submit", function(e){
       let hora = document.getElementById("hora").value;
 
       // Número de WhatsApp de la peluquería (ejemplo: Venezuela +58)
-      let numeroPeluqueria = "584169394318"; 
+      let numeroPeluqueria = "5491144931652"; 
 
       // Mensaje que se enviará
       let mensaje = `Hola MONTESTILISTA, soy ${nombre}. Quiero agendar una cita.\n
@@ -29,8 +29,7 @@ document.getElementById("formCita").addEventListener("submit", function(e){
       ⏰ Hora: ${hora}`;
 
     // Crear enlace de WhatsApp directamente
-let url = `https://wa.me/584169394318?text=${encodeURIComponent(mensaje)}`;
-
+let url = `https://wa.me/5491144931652?text=${encodeURIComponent(mensaje)}`;
       // Abrir WhatsApp
       window.open(url, "_blank");
     });

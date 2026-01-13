@@ -7,6 +7,19 @@
     <link rel="stylesheet" href="home.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
     <title>MONTESTILISTA</title>
+    <style>
+      .site-footer {
+        background: linear-gradient(90deg, #f7efe1, #f3e6d0);
+        color: #5a4632;
+        padding: 12px 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.95rem;
+      }
+      .site-footer a { color: #5a4632; text-decoration: underline; font-weight: 500; }
+    </style>
   </head>
   <body>
     <h1 class="logo">MONTESTILISTA</h1>
@@ -57,23 +70,32 @@
  <section class="tendencias-section">
  <div class="tendencias-grid">
     <figure class="tendencia-item" data-id="1" tabindex="0">
-     <img src="/imag/ALISADO LASER1.jpg" alt="Tendencia 1" class="tendencia-thumb">
+     <img src="/imag/alisado con laser 1.jpg" alt="Tendencia 1" class="tendencia-thumb">
        <figcaption class="tendencia-title"></figcaption>
      </figure>
      <figure class="tendencia-item" data-id="2" tabindex="0">
-       <img src="/imag/ALISADO LASER 2.jpg" alt="Tendencia 2" class="tendencia-thumb">
+       <img src="/imag/alisado con laser 2.jpg" alt="Tendencia 2" class="tendencia-thumb">
        <figcaption class="tendencia-title"></figcaption>
      </figure>
-   </div>
-
-   <div class="product-info-panel" id="productPanel" aria-hidden="true">
-     <div class="product-info-content" id="productContent">
-       <h3 class="product-name"></h3>
-       <p class="product-desc"></p>
-       <p class="product-price"></p>
-       <button class="close-product" id="closeProduct" aria-label="Cerrar">Cerrar</button>
-     </div>
-   </div>
+     <!-- Nueva tarjeta Gift Card (clase nueva: giftcard-item) -->
+    </div>
+    
+    <div class="product-info-panel" id="productPanel" aria-hidden="true">
+      <div class="product-info-content" id="productContent">
+        <h3 class="product-name"></h3>
+        <p class="product-desc"></p>
+        <p class="product-price"></p>
+        <button class="close-product" id="closeProduct" aria-label="Cerrar">Cerrar</button>
+      </div>
+    </div>
+    <figure class="tendencia-item giftcard-item" tabindex="0" aria-label="Gift Card MontEstilista">
+      <a href="/imag/perfil profesional/gitcard.jpg" download="GiftCard_MontEstilista.jpg">
+        <img src="/imag/perfil profesional/gitcard.jpg" alt="Gift Card MontEstilista" class="giftcard-thumb">
+      </a>
+      <figcaption class="tendencia-title">
+        Gift Card MontEstilista — Descargá y regalá belleza. (Haz clic en la imagen para descargar)
+      </figcaption>
+    </figure>
  </section>
 
 </section> <!-- cierra tendencias-section si aplica -->
@@ -83,32 +105,76 @@
   <h2>Nuestro Equipo Profesional</h2>
   <div class="equipo-contenedor">
     
-    <div class="equipo-card">
+<div class="equipo-card">
       <a href="../servicios/index.html"></a>
-      <img src="/imag/logo sin fondo.png" alt="Claudia - Especialista en manicura y pedicura">
-      <h3>CLAUDIA SOTO</h3>
-      <p>MANICURA-PEDICURA </p>
+      <img src="/imag/perfil profesional/san.jpg" alt="SANDRA estilista profesional">
+      <h3>SANDRA MONT</h3>
+      <p>ESTILISTA PROFESIONAL</p>
     </div>
 
     <div class="equipo-card">
       <a href="../servicios/index.html"></a>
-      <img src="/imag/logo sin fondo.png" alt="Karina - Especialista en cosmetología">
+      <img src="/imag/perfil profesional/belen.jpg" alt="Belen - Asistente avanzada de peluquería">
+      <h3>BELEN BOGADO</h3>
+      <p>ASISTENTE AVANZADA DE PELUQUERÍA</p>
+    </div>
+
+    <div class="equipo-card">
+      <a href="../servicios/index.html"></a>
+      <img src="/imag/perfil profesional/KARI.jpg" alt="Karina - Especialista en cosmetología">
       <h3>KARINA SERRA </h3>
-      <p>COSMETOLOGA</p>
+      <p>COSMETOLOGA PROFESIONAL</p>
     </div>
 
     <div class="equipo-card">
       <a href="../servicios/index.html"></a>
-      <img src="/imag/logo sin fondo.png" alt="Abigail - Especialista en barbería">
+      <img src="/imag/perfil profesional/ABI.jpg" alt="Abigail - Especialista en barbería">
       <h3>ABIGAIL RODRIGUEZ</h3>
-      <p>BARBERA</p>
+      <p>BARBERA PROFESIONAL</p>
     </div>
 
     <div class="equipo-card">
       <a href="../servicios/index.html"></a>
-      <img src="/imag/logo sin fondo.png" alt="Adriana - Especialista en maquillaje">
+      <img src="/imag/perfil profesional/ADRI.jpg" alt="Adriana - Especialista en maquillaje">
       <h3>ADRIANA CAVALIERI</h3>
-      <p>MAQUILLADORA</p>
+      <p>MAQUILLADORA PROFESIONAL</p>
+    </div>
+
+    <div class="equipo-card">
+      <a href="../servicios/index.html"></a>
+      <img src="/imag/perfil profesional/oriselda.jpg" alt="griselda - Maquilladora profesional y peinadora">
+      <h3>GRISELDA ARRIETA </h3>
+      <p>MAQUILLADORA - PEINADORA PROFESIONAL</p>
+    </div>
+<div class="equipo-card">
+      <a href="../servicios/index.html"></a>
+      <img src="/imag/perfil profesional/sabrina.jpeg" alt="sabrina - Maquilladora profesional">
+      <h3>SABRINA CIRIGLIANO  </h3>
+      <p>MAQUILLADORA PROFESIONAL</p>
+    </div>
+    <div class="equipo-card">
+      <a href="../servicios/index.html"></a>
+      <img src="/imag/perfil profesional/CLAU.jpg" alt="CLAUDIA - Manicurista y pedicurista profesional">
+      <h3>CLAUDIA SOTO </h3>
+      <p>MANICURISTA Y PEDICURISTA PROFESIONAL</p>
+    </div>
+     <div class="equipo-card">
+      <a href="../servicios/index.html"></a>
+      <img src="/imag/perfil profesional/GISELA.jpg" alt="gisela- Dermatologa profesional">
+      <h3>Gisela Espinosa </h3>
+      <p>DERMATOLOGA PROFESIONAL</p>
+    </div>
+<div class="equipo-card">
+      <a href="../servicios/index.html"></a>
+      <img src="/imag/perfil profesional/AILIN.jpg" alt="Ailin - MANICURISTA Y PEDICURISTA PROFESIONAL">
+      <h3>AILIN TORRENTE </h3>
+      <p>MANICURA Y NAIL ART</p>
+    </div>
+    <div class="equipo-card">
+      <a href="../servicios/index.html"></a>
+      <img src="/imag/perfil profesional/SOL.jpg" alt="SOL - MASAJISTA DESCONTRACTURANTES">
+      <h3>SOL MENDOZA </h3>
+      <p>MASAJISTA DESCONTRACTURANTE CON PIEDRAS</p>
     </div>
 
   </div>
@@ -120,27 +186,31 @@
   <div class="info-card">
     <div class="icon" aria-hidden="true">📍</div>
     <h4 class="info-title">Ubicación</h4>
-    <p class="info-text">Bogota 924. Buenos aires Capital. </p>
+    <p class="info-text">Rivadavia 5178, Buenos aires Capital. </p>
   </div>
 
   <div class="info-card">
     <div class="icon" aria-hidden="true">☎️</div>
     <h4 class="info-title">Contacto</h4>
-    <p class="info-text">Tel: <a href="tel:+51900000000">+54 911 66286255</a><br>Email: <a href="mailto:contacto@montestilista.com">contacto@montestilista.com</a></p>
+    <p class="info-text">Tel: <a href="tel:+51900000000">+54 9 11 44931652</a><br>Email: <a href="sandramontoto1968@gmail.com">sandramontoto1968@gmail.com</a></p>
   </div>
 
   <div class="info-card">
     <div class="icon" aria-hidden="true">🔗</div>
     <h4 class="info-title">Redes Sociales</h4>
     <p class="info-text social-links">
-      <a href="#" target="_blank" rel="noopener">Instagram</a> ·
-      <a href="#" target="_blank" rel="noopener">Facebook</a> ·
-      <a href="#" target="_blank" rel="noopener">WhatsApp</a>
+    <a href="https://www.instagram.com/montestilista/" target="_blank" rel="noopener noreferrer">Instagram</a> ·
+    <a href="https://www.facebook.com/p/Sandra-Mont-Estilista-100007714455582/" target="_blank" rel="noopener noreferrer">Facebook</a> ·
+    <a href="https://wa.me/5491144931652" target="_blank" rel="noopener noreferrer">WhatsApp</a>
     </p>
   </div>
 </section>
 
 
    <script src="home.js"></script>
+  <footer class="site-footer">
+    <span>Elaborado por</span>
+    <a href="https://github.com/Abigail2904" target="_blank" rel="noopener noreferrer">Abigail Rodriguez</a>
+  </footer>
   </body>
 </html>

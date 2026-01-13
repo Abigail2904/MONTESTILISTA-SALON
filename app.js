@@ -14,6 +14,8 @@ const todosRouter = require('./controllers/todos'); //importar el router de todo
 const { userExtractor } = require('./middleware/auth'); //importar el middleware de autenticación
 const logoutRouter = require('./controllers/logout'); //importar el router de logout
 const { MONGO_URI } = require('./config'); //importar la URI de MongoDB desde la configuración
+const promocionesAdminRouter = require('./controllers/promocionesAdmin');
+const promocionesPublicRouter = require('./controllers/promocionesPublic');
 
 
 (async() => {
@@ -44,6 +46,7 @@ app.use('/servicios', express.static(path.resolve('views','servicios')));
 app.use('/Produ', express.static(path.resolve('views','Produ')));
 app.use('/admin', express.static(path.resolve('views','admin')));
 
+
 app.use(morgan('tiny'));
 
 
@@ -52,6 +55,8 @@ app.use('/api/users', usersRouter);
 app.use('/api/login', loginRouter);
 app.use('/api/promociones', userExtractor, todosRouter);
 app.use('/api/logout', logoutRouter);
+app.use('/api/promociones-admin', promocionesAdminRouter);
+app.use('/api/promociones-activas', promocionesPublicRouter); // público
 
 
 

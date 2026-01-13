@@ -7,118 +7,43 @@
       color: #4a3c2a;
     }
 
-    .servicios {
-      max-width: 1200px;
-      margin: auto;
-      padding: 40px 20px;
-    }
-
-    .servicios h2 {
-      text-align: center;
-      font-size: 2.2em;
-      margin-bottom: 30px;
-      color: #3e2f1c;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      background: #fff8f0;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 6px 14px rgba(0,0,0,0.15);
-    }
-
-    .card-header {
-      padding: 20px;
-      background: linear-gradient(135deg, #e6d3b3, #f5e3c3);
-      font-weight: bold;
-      font-size: 1.2em;
-      color: #3e2f1c;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .card-header i {
-      margin-right: 10px;
-      color: #6b4f2f;
-    }
-
-    .card-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.5s ease, padding 0.3s ease;
-      padding: 0 20px;
-      background-color: #fffaf3;
-    }
-
-    .card-content p {
-      margin: 15px 0;
-      line-height: 1.6;
-    }
-
-    .card.active .card-content {
-      max-height: 300px;
-      padding: 20px;
-    }
-
-    /* Responsive ajustes */
-    @media (max-width: 600px) {
-      .servicios h2 {
-        font-size: 1.8em;
-      }
-      .card-header {
-        font-size: 1em;
-      }
-    }
+   
 /* Estilos del cuerpo de la página */
 body {
-    background-color: #f8f7f5; /* Ejemplo de color claro */
+    background-color: #fdf6e3; /* Ejemplo de color claro */
     font-family: 'NombreDeLaFuentePrincipal', sans-serif;
 }
 
 /* Layout del nav: elementos en línea y centrados */
 nav.main-nav {
   position: relative;
-  margin-top: 70px; /* mantiene espacio por el botón fijo */
+  margin-top: 70px;
   display: flex;
   align-items: center;
-  justify-content: center; /* centro horizontal del nav */
+  justify-content: space-between; /* logo a la izquierda, menú a la derecha */
   width: 100%;
-  max-width: 1100px; /* control de ancho */
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 1100px;
+  margin-inline: auto;
   box-sizing: border-box;
-  background-color: #eee0c7; /* color de fondo suave */
-   margin-bottom: 32px;
+  background-color: #eee0c7;
+  padding: 10px 20px;
+  margin-bottom: 32px;
 }
 
-/* Menú horizontal centrado dentro del nav */
+/* Menú horizontal en pantallas grandes */
 nav.main-nav ul {
-  display: flex;
+  display: contents; /* mejor que contents para control responsivo */
   align-items: center;
-  justify-content: center; /* centra los items del UL */
-  gap: 2rem; /* más separación entre elementos */
+  justify-content: flex-end;
+  gap: clamp(0.8rem, 2vw, 2rem);
   list-style: none;
   margin: 0;
   padding: 0;
-  font-size: 1.05rem; /* texto del menú un poco más grande */
+  font-size: clamp(0.9rem, 1.05vw, 1.05rem);
   font-weight: 700;
+  flex-wrap: wrap;
 }
 
-/* Estilo de cada ítem */
 nav.main-nav ul li {
   padding: 8px 10px;
   cursor: pointer;
@@ -126,13 +51,58 @@ nav.main-nav ul li {
   white-space: nowrap;
 }
 
-/* Logo: tamaño proporcionado al nav */
 nav.main-nav img {
-  height: 64px; /* un poco más grande */
+  height: clamp(40px, 6vw, 64px);
   width: auto;
   object-fit: contain;
   display: block;
   margin: 0 12px;
+}
+
+/* --- RESPONSIVE --- */
+
+/* Tablets y móviles */
+@media (max-width: 768px) {
+  nav.main-nav {
+    flex-direction: column; /* logo arriba, menú abajo */
+    align-items: flex-start;
+    padding: 15px;
+  }
+
+  nav.main-nav ul {
+    flex-direction: column; /* menú vertical */
+    align-items: flex-start;
+    gap: 1rem;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  nav.main-nav ul li {
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+  }
+
+  nav.main-nav img {
+    margin: 0 auto; /* logo centrado */
+  }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+  nav.main-nav {
+    margin-top: 40px;
+    padding: 10px;
+  }
+
+  nav.main-nav ul {
+    font-size: 0.9rem;
+    gap: 0.8rem;
+  }
+
+  nav.main-nav img {
+    height: 48px;
+  }
 }
 nav.main-nav ul li a.nav-link {
   color: inherit;
@@ -238,4 +208,52 @@ h1.logo {
   opacity: 0.95;
   text-transform: none;
   line-height: 1.1;
+}
+.servicios {
+  padding: 40px 20px;
+  background: #fdf6ec; /* tono cálido */
+  text-align: center;
+}
+
+.servicios h2 {
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  color: #3e2f1c;
+}
+
+.grid-servicios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.servicio {
+  background: #fff8f0;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+.servicio:hover {
+  transform: translateY(-5px);
+}
+
+.servicio img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.servicio h3 {
+  margin: 10px 0;
+  font-size: 1.2rem;
+  color: #6b4c3b;
+}
+
+.servicio p {
+  font-size: 0.95rem;
+  color: #444;
 }

@@ -1,0 +1,182 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom, #fdf6e3, #f5deb3); /* arena suave */
+  color: #5a4632; /* marrón elegante */
+  margin: 0;
+  padding: 20px;
+}
+
+h1, h2 {
+  color: #8b6f47; /* tono cálido */
+  text-align: center;
+}
+
+form {
+  background: #fff8e7; /* crema arena */
+  border: 1px solid #d2b48c; /* borde arena */
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 400px;
+  margin: auto;
+  box-shadow: 0 4px 8px rgba(139, 111, 71, 0.2);
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+input, button {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #d2b48c;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+button {
+  background: #c19a6b; /* arena dorada */
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #a67c52; /* tono más profundo */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px;
+  background: #fffaf0;
+  box-shadow: 0 4px 8px rgba(139, 111, 71, 0.2);
+}
+
+th {
+  background: #deb887; /* beige arena */
+  color: #fff;
+  padding: 10px;
+}
+
+td {
+  border: 1px solid #d2b48c;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background: #f5f5dc; /* beige claro */
+}
+
+tr:hover {
+  background: #f0e68c; /* arena suave al pasar */
+}
+/* Estilos del cuerpo de la página */
+body {
+    background-color: #f8f7f5; /* Ejemplo de color claro */
+    font-family: 'NombreDeLaFuentePrincipal', sans-serif;
+}
+
+/* Layout del nav: elementos en línea y centrados */
+nav.main-nav {
+  position: relative;
+  margin-top: 70px; /* mantiene espacio por el botón fijo */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* centro horizontal del nav */
+  width: 100%;
+  max-width: 1100px; /* control de ancho */
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  background-color: #eee0c7; /* color de fondo suave */
+   margin-bottom: 32px;
+}
+
+/* Menú horizontal centrado dentro del nav */
+nav.main-nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* centra los items del UL */
+  gap: 2rem; /* más separación entre elementos */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 1.05rem; /* texto del menú un poco más grande */
+  font-weight: 700;
+}
+
+/* Estilo de cada ítem */
+nav.main-nav ul li {
+  padding: 8px 10px;
+  cursor: pointer;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Logo: tamaño proporcionado al nav */
+nav.main-nav img {
+  height: 64px; /* un poco más grande */
+  width: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 12px;
+}
+nav.main-nav ul li a.nav-link {
+  color: inherit;
+  text-decoration: none;
+  padding: 6px 8px;
+  display: inline-block;
+}
+nav.main-nav ul li a.nav-link:hover {
+  text-decoration: underline;
+}
+/* Título principal centrado y más grande */
+h1.logo {
+  text-align: center;
+  font-size: 3rem; /* ajusta según prefieras */
+  font-weight: 800;
+  margin: 28px 0 10px;
+  letter-spacing: 1px;
+}
+
+/* Respuesta en pantallas pequeñas */
+@media (max-width: 900px) {
+  nav.main-nav img {
+    height: 56px;
+  }
+  nav.main-nav ul {
+    gap: 1.2rem;
+    font-size: 1rem;
+  }
+  h1.logo {
+    font-size: 2.4rem;
+  }
+}
+
+@media (max-width: 600px) {
+  nav.main-nav {
+    padding: 10px 12px;
+  }
+  nav.main-nav img {
+    height: 44px;
+  }
+  nav.main-nav ul {
+    gap: 0.8rem;
+    font-size: 0.95rem;
+  }
+  h1.logo {
+    font-size: 1.8rem;
+  }
+}
+
+/* Estilos de la navegación usando Flexbox */
+.main-nav ul {
+    display: flex; /* Alinea los elementos horizontalmente */
+    list-style: none;
+    justify-content: space-around; /* Distribuye el espacio entre los enlaces */
+    padding: 10px 0;
+}

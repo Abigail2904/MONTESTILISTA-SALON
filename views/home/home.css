@@ -1,39 +1,39 @@
 /* Estilos del cuerpo de la página */
 body {
-    background-color: #f8f7f5; /* Ejemplo de color claro */
+    background-color: #fdf6e3; /* Ejemplo de color claro */
     font-family: 'NombreDeLaFuentePrincipal', sans-serif;
 }
 
 /* Layout del nav: elementos en línea y centrados */
 nav.main-nav {
   position: relative;
-  margin-top: 70px; /* mantiene espacio por el botón fijo */
+  margin-top: 70px;
   display: flex;
   align-items: center;
-  justify-content: center; /* centro horizontal del nav */
+  justify-content: space-between; /* logo a la izquierda, menú a la derecha */
   width: 100%;
-  max-width: 1100px; /* control de ancho */
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 1100px;
+  margin-inline: auto;
   box-sizing: border-box;
-  background-color: #eee0c7; /* color de fondo suave */
-   margin-bottom: 32px;
+  background-color: #eee0c7;
+  padding: 10px 20px;
+  margin-bottom: 32px;
 }
 
-/* Menú horizontal centrado dentro del nav */
+/* Menú horizontal */
 nav.main-nav ul {
-  display: flex;
+  display: contents;
   align-items: center;
-  justify-content: center; /* centra los items del UL */
-  gap: 2rem; /* más separación entre elementos */
+  justify-content: center;
+  gap: clamp(0.8rem, 2vw, 2rem);
   list-style: none;
   margin: 0;
   padding: 0;
-  font-size: 1.05rem; /* texto del menú un poco más grande */
+  font-size: clamp(0.9rem, 1.05vw, 1.05rem);
   font-weight: 700;
+  flex-wrap: wrap; /* permite que se acomoden en varias líneas */
 }
 
-/* Estilo de cada ítem */
 nav.main-nav ul li {
   padding: 8px 10px;
   cursor: pointer;
@@ -41,24 +41,53 @@ nav.main-nav ul li {
   white-space: nowrap;
 }
 
-/* Logo: tamaño proporcionado al nav */
 nav.main-nav img {
-  height: 64px; /* un poco más grande */
+  height: clamp(40px, 6vw, 64px);
   width: auto;
   object-fit: contain;
   display: block;
   margin: 0 12px;
 }
 
-/* Título principal centrado y más grande */
 h1.logo {
   text-align: center;
-  font-size: 3rem; /* ajusta según prefieras */
+  font-size: clamp(1.8rem, 3vw, 3rem);
   font-weight: 800;
   margin: 28px 0 10px;
   letter-spacing: 1px;
 }
 
+/* 📱 Responsive */
+@media (max-width: 900px) {
+  nav.main-nav {
+    flex-direction: column;
+    gap: 12px;
+  }
+  nav.main-nav ul {
+    font-size: 1rem;
+    gap: 1rem;
+  }
+  h1.logo {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  nav.main-nav {
+    padding: 10px;
+  }
+  nav.main-nav img {
+    height: 44px;
+  }
+  nav.main-nav ul {
+    flex-direction: column; /* menú vertical en móviles */
+    gap: 0.8rem;
+    font-size: 0.95rem;
+  }
+  h1.logo {
+    font-size: 1.8rem;
+  }
+}
 /* Respuesta en pantallas pequeñas */
 @media (max-width: 900px) {
   nav.main-nav img {
@@ -303,21 +332,22 @@ nav.main-nav ul li a.nav-link:hover {
 /* Tendencias: dos thumbnails y panel deslizante */
 .tendencias-section { max-width: 1100px; margin: 28px auto; padding: 0 18px; box-sizing: border-box; }
 .tendencias-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0,1fr));
-  gap: 8px;
-  align-items: start;
-  justify-items: center;
+ display: flex;
+  gap: 0;
+  align-items: stretch;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: 620px; /* ajusta según diseño */
 }
 .tendencia-item {
-  cursor: pointer;
-  text-align: center;
-  width: 100%;
-  max-width: 260px; /* tamaño pequeño */
-  transition: transform .16s ease, box-shadow .16s ease;
-  border-radius: 10px;
-  padding: 8px;
-  background: transparent;
+ flex: 40%; /* cada una ocupa la mitad, sin separaciones */
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  overflow: hidden;
+  display: block;
 }
 .tendencia-item:focus, .tendencia-item:hover {
   transform: translateY(-6px);
@@ -326,11 +356,10 @@ nav.main-nav ul li a.nav-link:hover {
 }
 .tendencia-thumb {
   width: 100%;
-  height: auto;
-  max-height: 160px;
+  height: 260px; /* misma altura fija para ambas */
   object-fit: cover;
-  border-radius: 8px;
   display: block;
+  border-radius: 0;
 }
 
 .tendencia-sub {
@@ -511,7 +540,7 @@ h2.tendencias::after {
   .equipo {
   text-align: center;
   padding: 60px 20px;
-  background: #f9f9f9; /* Fondo suave */
+  background: #fdf6e3; /* Fondo suave */
 }
 
 .equipo h2 {
@@ -559,4 +588,78 @@ h2.tendencias::after {
   font-size: 1rem;
   color: #666;
 }
+    
+      .site-footer {
+        background: linear-gradient(90deg, #f7efe1, #f3e6d0);
+        color: #5a4632;
+        padding: 12px 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.95rem;
+      }
+      .site-footer a { color: #5a4632; text-decoration: underline; font-weight: 500; }
 
+  /* Tarjeta giftcard */
+.tendencia-item.giftcard-item {
+  flex: 1 1 auto;              /* que se adapte al espacio */
+  width: 100%;
+  max-width: 600px;            /* límite razonable en desktop */
+  order: 99;                   /* siempre al final */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  box-sizing: border-box;
+  background: #fdf6e3;
+  border-radius: 12px;
+  border: 1px solid rgba(90,70,50,0.08);
+  box-shadow: 0 8px 24px rgba(90,70,50,0.08);
+  margin: 12px auto;           /* centrada */
+}
+
+/* Imagen */
+.tendencia-item.giftcard-item .giftcard-thumb {
+  width: 100%;                 /* ocupa todo el ancho disponible */
+  max-width: 500px;            /* límite en pantallas grandes */
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  display: block;
+  background: transparent;
+}
+
+/* Texto */
+.tendencia-item.giftcard-item .tendencia-title {
+  color: #5a4632;
+  font-weight: 600;
+  text-align: center;
+  padding: 8px 12px;
+  font-size: clamp(1rem, 2.5vw, 1.2rem); /* escala fluida */
+}
+
+/* --- RESPONSIVE --- */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .tendencia-item.giftcard-item {
+    padding: 14px;
+    max-width: 90%;            /* que no se vea tan pequeña */
+  }
+  .tendencia-item.giftcard-item .giftcard-thumb {
+    max-width: 100%;
+  }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+  .tendencia-item.giftcard-item {
+    padding: 12px;
+    max-width: 100%;           /* ocupa todo el ancho */
+  }
+  .tendencia-item.giftcard-item .tendencia-title {
+    font-size: 1rem;           /* texto legible */
+  }
+}

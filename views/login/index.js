@@ -15,19 +15,20 @@ form.addEventListener('submit', async e => {
         email: emailInput.value,
         password: passwordInput.value
     };
-    console.log(user);
+    //console.log(user);
     // Envía una petición HTTP POST al backend, a la ruta '/api/login'
         // El objeto 'user' se envía en el cuerpo de la petición
     await axios.post('/api/login', user);
-    window.location.pathname = ('/promociones'); // Si la respuesta es exitosa (no hay errores),
+    window.location.pathname = ('../admin/index.html'); // Si la respuesta es exitosa (no hay errores),
         // redirige al usuario a la página principal de tareas
 
     } catch(error) {
-    console.log(error);
+   // console.log(error);
     // Muestra el mensaje de error que viene del servidor dentro del elemento HTML con id "error-text"
     errorText.innerHTML = error.response.data.error;
     }
 });
+
 
 
     
