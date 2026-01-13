@@ -67,6 +67,26 @@ const incompletedCountSpan = document.querySelector('.incompleted-count');
       }
     });
   });
+// ...existing code...
+// Scroll-to-top button
+(function(){
+  const btn = document.getElementById('scrollTopBtn');
+  if(!btn) return;
+  const showAfter = 200; // px scrolled
 
+  function check() {
+    if(window.scrollY > showAfter) btn.classList.add('visible');
+    else btn.classList.remove('visible');
+  }
+
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  document.addEventListener('scroll', check, { passive: true });
+  window.addEventListener('load', check);
+})();
+  
+// ...existing code...
   closeBtn?.addEventListener('click', closePanel);
 })();
