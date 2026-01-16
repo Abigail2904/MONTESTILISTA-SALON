@@ -6,8 +6,8 @@
   <link rel="stylesheet" href="admin.css">
   <style>
     table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
-    th { background: #f4f4f4; }
+    th, td { border: 1px solid #ccc; padding: 6px; text-align: left; }
+    th { background: #a67c52; }
     button { margin: 2px; }
   </style>
 </head>
@@ -22,6 +22,7 @@
        <li><a href="../login/index.html" class="nav-link">LOGIN</a></li>
       </ul>
    </nav>
+   
   <h1>Panel de Promociones</h1>
 
   <!-- Formulario -->
@@ -29,7 +30,6 @@
     <label>PROMOCION <input type="text" id="title" required></label><br>
     <label>Descripción: <input type="text" id="description" required></label><br>
     <label>Tipo:
-      <input type="radio" name="promoType" value="diaria" required> Diaria
       <input type="radio" name="promoType" value="semanal"> Semanal
     </label><br>
     <label>Fecha inicio: <input type="date" id="startDate" required></label><br>

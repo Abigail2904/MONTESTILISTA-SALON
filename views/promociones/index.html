@@ -31,18 +31,18 @@
   <div id="activePromos"></div>
 
   <script>
-    async function loadActivePromotions() {
+    async function loadActivePromotions() { //función para cargar promociones activas
       try {
-        const response = await fetch("/api/promociones-activas");
-        const promos = await response.json();
+        const response = await fetch("/api/promociones-activas"); //realizar una solicitud GET a la ruta de promociones activas
+        const promos = await response.json(); //convertir la respuesta a formato JSON
 
-        const container = document.getElementById("activePromos");
-        container.innerHTML = "";
+        const container = document.getElementById("activePromos"); //obtener el contenedor donde se mostrarán las promociones
+        container.innerHTML = ""; //limpiar el contenedor antes de agregar nuevas promociones
 
-        promos.forEach(promo => {
-          const div = document.createElement("div");
-          div.className = "promo";
-          div.innerHTML = `
+        promos.forEach(promo => { //iterar sobre cada promoción recibida
+          const div = document.createElement("div"); //crear un nuevo div para cada promoción
+          div.className = "promo"; //asignar la clase CSS "promo" al div
+          div.innerHTML = `  
             <h3>${promo.title}</h3>
             <p>${promo.description}</p>
             <small>${new Date(promo.startDate).toLocaleDateString()} - ${new Date(promo.endDate).toLocaleDateString()}</small>
